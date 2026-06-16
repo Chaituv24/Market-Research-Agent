@@ -1,0 +1,11 @@
+﻿# Local virtual environment
+.venv/
+__pycache__/
+*.pyc
+
+# Local persistent database (Your dynamic dataset)
+market_research_db/
+
+# Operating system files
+.DS_Store
+Thumbs.db
