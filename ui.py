@@ -27,7 +27,7 @@ if st.button("Launch Research Agents", type="primary"):
         with st.spinner("Agents are searching, analyzing data, and updating vector storage..."):
             try:
                 # Points directly to your active live hosted backend API endpoint
-                API_URL = "https://market-research-agent-2xdb.onrender.com/start-research"
+                API_URL = "https://market-research-agent-2xdb.onrender.com/api/research"
                 
                 # Payload matching your FastAPI Pydantic request body schema
                 payload = {"topic": topic}
