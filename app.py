@@ -1,11 +1,21 @@
 import uvicorn
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware  # <-- ADDED THIS FOR CORS SECURITY
 from pydantic import BaseModel
 from graph import research_graph
 
 app = FastAPI(
     title="Autonomous Multi-Agent Market Research Engine",
     version="1.1.0"
+)
+
+#  ADDED CORS MIDDLEWARE TO PERMIT LOCAL FRONTEND WEB CONNECTIONS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Permits local file protocols (file://) or live links to interact safely
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 class ResearchRequest(BaseModel):
